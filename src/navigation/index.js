@@ -59,7 +59,7 @@ const HomeStackNavigator = () => {
     return (
         <HomeStack.Navigator>
             <HomeStack.Screen name="Search" component={HomeScreen} />
-            <HomeStack.Screen name="Coach Profile" component={CoachProfileScreen} options={{headerShown: false}}/>
+            <HomeStack.Screen name={'Coach Profile'} component={CoachProfileScreen} options={{headerShown: false}}/>
             <HomeStack.Screen name="Packages" component={PackagesScreen} />
             <HomeStack.Screen name="Book Package" component={BookPackageScreen} />
         </HomeStack.Navigator>   

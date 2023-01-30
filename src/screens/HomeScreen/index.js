@@ -1,14 +1,15 @@
-import { View, Text, Pressable, TextInput} from 'react-native';
+import { View, Text, Pressable, FlatList} from 'react-native';
 import { useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import styles from './styles';
 import SelectDropdown from 'react-native-select-dropdown';
+import coaches from '../../../assets/data/coaches.json';
+import Coach from '../../components/Coach';
 
 const HomeScreen = () => {
 
   const navigation = useNavigation();
-  const [sport,setSport] = useState(' ');
-  const [address, setAddress] = useState(' ');
+  const [sport,setSport] = useState('');
 
   const sports = [
     'Baseball',
@@ -40,18 +41,15 @@ const HomeScreen = () => {
             rowStyle={styles.dropdownRowStyle}
             rowTextStyle={styles.dropdownRowTxtStyle}
           />
-          <TextInput 
-            value = {address}
-            onChangeText={value=>setAddress(value)}
-            style = {styles.address}
-            clearButtonMode = {'while-editing'}
-            placeholder = {'Enter Address'}
-            placeholderTextColor = {'black'}
-            />
           <Pressable
-          style={styles.button} onPress={navigation.navigate("Coach Profile")}>
-          <Text style={styles.buttonText}> Find </Text>
+          style={styles.button} onPress={() => console.warn('Search')}>
+          <Text style={styles.buttonText}> Find A Coach </Text>
           </Pressable>
+          <FlatList
+            data={coaches}
+            renderItem={({item, index}) => <Coach coach={item} />}
+            keyExtractor={(item, index) => index}
+          />
         </View>
       );
 }

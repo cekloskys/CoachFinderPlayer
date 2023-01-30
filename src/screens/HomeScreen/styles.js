@@ -7,9 +7,10 @@ const styles = StyleSheet.create({
     button: {
       borderColor: 'black',        
       marginTop: 'auto',
-      padding: 30,
+      padding: 15,
+      backgroundColor: 'lightgrey',
       alignItems: 'center',
-      borderRadius: 20,
+      borderRadius: 15,
   },
   buttonText: {
     color: 'black',
@@ -41,10 +42,20 @@ const styles = StyleSheet.create({
     name: {
       fontSize: 18,
       marginTop: 15,
+      borderTopWidth: 1.0,
       borderBottomWidth: 1.0,
       textAlign: 'center',
       color: 'black',
-      borderColor: 'Black',
+      borderColor: 'black',
+    },
+    address: {
+      fontSize: 18,
+      marginTop: 15,
+      borderTopWidth: 1.0,
+      borderBottomWidth: 1.0,
+      textAlign: 'center',
+      color: 'black',
+      borderColor: 'black',
     },
   });
 
