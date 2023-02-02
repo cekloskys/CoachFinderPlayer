@@ -4,34 +4,34 @@ import styles from './styles';
 import coaches from '../../../assets/data/coaches.json';
 import Coach from '../../components/Coach';
 import Header from './header';
-import {Ionicons} from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
 
 const CoachProfileScreen = () => {
   const route = useRoute();
   const navigation = useNavigation();
   const onPress = () => {
-        navigation.navigate('Search');
-      };
+    navigation.navigate('Search');
+  };
 
   const id = route.params?.id;
 
   const coach = coaches[id - 1];
 
-    return (
-        <View style={styles.page}>
-          <SectionList
+  return (
+    <View style={styles.page}>
+      <SectionList
         ListHeaderComponent={() => <Header coach={coach} />}
         ListFooterComponent={() =>
           <Pressable
-          style={styles.button} onPress={() => navigation.navigate('Packages')}>
-          <Text style={styles.buttonText}> Coach's Packages </Text>
+            style={styles.button} onPress={() => navigation.navigate('Packages')}>
+            <Text style={styles.buttonText}> Coach's Packages </Text>
           </Pressable>
-          }
-        sections={[{ title: 'Accreditations', data: coach.accreditations},
-        { title: 'Ages', data: coach.ages},
-        { title: 'Positions', data: coach.positions},
-        { title: 'Specialities', data: coach.specialties},
-         
+        }
+        sections={[{ title: 'Accreditations', data: coach.accreditations },
+        { title: 'Ages', data: coach.ages },
+        { title: 'Positions', data: coach.positions },
+        { title: 'Specialities', data: coach.specialties },
+
         ]}
         renderItem={({ item }) => (
           <View style={styles.sectionContent}>
@@ -50,17 +50,17 @@ const CoachProfileScreen = () => {
         )}
 
       />
-       
-      <Ionicons 
-            name='arrow-back-circle'
-            size={45}
-            color='white'
-            style={styles.iconContainer}
-            onPress={onPress}
-        />
-          
-        </View>
-      );
+
+      <Ionicons
+        name='arrow-back-circle'
+        size={45}
+        color='white'
+        style={styles.iconContainer}
+        onPress={onPress}
+      />
+
+    </View>
+  );
 }
 
 export default CoachProfileScreen;

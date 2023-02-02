@@ -5,14 +5,16 @@ import { useNavigation } from '@react-navigation/native';
 const Booking = ({book}) => {
   const navigation = useNavigation();
   const onPress = () => {
-        navigation.navigate('Bookings', {id: book.id})
+        navigation.navigate('Booking', {id: book.id})
       }; 
 
   return (
     <Pressable style={styles.restaurantContainer} onPress={onPress}>
-      <View style={styles.row}>
-        <View>
-          <Text style={styles.title}> {book.User.name} </Text>
+      <View style={styles.page}>
+        <View><Pressable
+          style={styles.title} onPress={() => navigation.navigate('Booking')}>
+          <Text style={styles.completeContainer}> {book.User.name} </Text>
+          </Pressable>
           <Text style={styles.subtitle}>
              {book.startDate}
           </Text>

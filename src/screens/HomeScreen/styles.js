@@ -39,24 +39,7 @@ const styles = StyleSheet.create({
       color: '#444', 
       textAlign: 'center',
     },
-    name: {
-      fontSize: 18,
-      marginTop: 15,
-      borderTopWidth: 1.0,
-      borderBottomWidth: 1.0,
-      textAlign: 'center',
-      color: 'black',
-      borderColor: 'black',
-    },
-    address: {
-      fontSize: 18,
-      marginTop: 15,
-      borderTopWidth: 1.0,
-      borderBottomWidth: 1.0,
-      textAlign: 'center',
-      color: 'black',
-      borderColor: 'black',
-    },
+    
   });
 
   export default styles;
