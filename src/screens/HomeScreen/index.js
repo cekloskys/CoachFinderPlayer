@@ -42,7 +42,7 @@ const HomeScreen = () => {
             rowTextStyle={styles.dropdownRowTxtStyle}
           />
           <Pressable
-          style={styles.button} onPress={() => console.warn('Search')}>
+          style={styles.button} onPress={() => console.warn('Find a ' + sport + ' Coach')}>
           <Text style={styles.buttonText}> Find A Coach </Text>
           </Pressable>
           <FlatList

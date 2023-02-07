@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
 
+
 const styles = StyleSheet.create({
   page: {
     flex: 1,
@@ -45,9 +46,16 @@ const styles = StyleSheet.create({
   subtitle: {
     fontSize: 20,
   },
+  details: {
+    color:'grey',
+    fontSize:18,
+    marginTop: 20,
+    
+  },
+ 
   subtitledetail: {
     color: 'grey',
-    fontSize: 20,
+    fontSize: 18,
     marginLeft: 'auto',
   },
   container: {

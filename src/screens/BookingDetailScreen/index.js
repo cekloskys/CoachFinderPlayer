@@ -37,9 +37,9 @@ const BookingDetailScreen = () => {
             <Text style={styles.subtitle}>Price</Text>
             <Text style={styles.subtitledetail}>${pack.price}</Text>
             </View>
-            <View style={{flexDirection:'column', marginVertical: 4,padding:10,}}>
+            <View style={{flexDirection:'column', marginVertical: 4, padding: 10}}>
             <Text style={styles.subtitle}>Details</Text>
-            <Text style={styles.subtitledetail}>{pack.longDescription}</Text>
+            <Text style={styles.details}>{pack.longDescription}</Text>
             </View>
             <View style={{flexDirection:'row', marginVertical: 4,padding:10,}}>
             <Text style={styles.subtitle}>Start Date</Text>
