@@ -12,12 +12,12 @@ const BookingDetailScreen = () => {
   const onPress = () => {
     navigation.navigate('Bookings');
   };
-  //const id = route.params?.id;
-  const id = 1;
+  const book = route.params?.book;
+  
 
-  const book = bookings[id-1];
-  const coach = coaches[id-1];
-  const pack = packages[id-1];
+  const booking = bookings[book.id-1];
+  const coach = coaches[book.coachId-1];
+  const pack = packages[book.packageId-1];
 
   return (
     <View style={styles.page}>
@@ -25,23 +25,30 @@ const BookingDetailScreen = () => {
             source={{uri: coach.image}} 
             style={styles.image} />
              <Text style={styles.title}>{coach.name}</Text>
-            <View style={{flexDirection:'row', marginVertical: 10}}>
+             <View style={{flexDirection:'row',marginVertical: 4, padding:10}}>
+            <Text style={styles.subtitle}>Athlete</Text>
+            <Text style={styles.subtitledetail}>{booking.User.name}</Text>
+            </View>
+            <View style={{flexDirection:'row', marginVertical: 4,padding:10}}>
             <Text style={styles.subtitle}>Package Name</Text>
             <Text style={styles.subtitledetail}>{pack.name}</Text>
             </View>
-            <View style={{flexDirection:'row', marginVertical: 10}}>
+            <View style={{flexDirection:'row', marginVertical: 4,padding:10}}>
             <Text style={styles.subtitle}>Price</Text>
             <Text style={styles.subtitledetail}>${pack.price}</Text>
             </View>
-            <View style={{flexDirection:'row', marginVertical: 10}}>
-            <Text style={styles.subtitle}>Date</Text>
-            <Text style={styles.subtitledetail}>{book.startDate}</Text>
+            <View style={{flexDirection:'column', marginVertical: 4,padding:10,}}>
+            <Text style={styles.subtitle}>Details</Text>
+            <Text style={styles.subtitledetail}>{pack.longDescription}</Text>
             </View>
-            <View style={{flexDirection:'row', marginVertical: 10}}>
-            <Text style={styles.subtitle}>Time</Text>
-            <Text style={styles.subtitledetail}>{book.startTime}</Text>
+            <View style={{flexDirection:'row', marginVertical: 4,padding:10,}}>
+            <Text style={styles.subtitle}>Start Date</Text>
+            <Text style={styles.subtitledetail}>{booking.startDate}</Text>
             </View>
-            
+            <View style={{flexDirection:'row', marginVertical: 4,padding:10}}>
+            <Text style={styles.subtitle}>Start Time</Text>
+            <Text style={styles.subtitledetail}>{booking.startTime}</Text>
+            </View>
       <Ionicons
         name='arrow-back-circle'
         size={45}

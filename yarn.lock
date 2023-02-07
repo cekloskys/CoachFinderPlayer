@@ -6046,6 +6046,11 @@
   dependencies:
     "is-arrayish" "^0.3.1"
 
+"simple-zeropad@^1.0.3":
+  "integrity" "sha512-lY0TiJHYWbyQikUBN+7ILTwh1ZJkqI6D5uSmFRBhJRe83PLKjxOL00QeiGXfkapXGC72aRXy3YTkxIeAVpvR4w=="
+  "resolved" "https://registry.npmjs.org/simple-zeropad/-/simple-zeropad-1.0.5.tgz"
+  "version" "1.0.5"
+
 "sisteransi@^1.0.5":
   "integrity" "sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg=="
   "resolved" "https://registry.npmjs.org/sisteransi/-/sisteransi-1.0.5.tgz"
@@ -6501,6 +6506,11 @@
   "resolved" "https://registry.npmjs.org/traverse/-/traverse-0.6.7.tgz"
   "version" "0.6.7"
 
+"trim@0.0.1":
+  "integrity" "sha512-YzQV+TZg4AxpKxaTHK3c3D+kRDCGVEE7LemdlQZoQXn0iennk10RsIoY6ikzAqJTc9Xjl9C1/waHom/J86ziAQ=="
+  "resolved" "https://registry.npmjs.org/trim/-/trim-0.0.1.tgz"
+  "version" "0.0.1"
+
 "ts-interface-checker@^0.1.9":
   "integrity" "sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA=="
   "resolved" "https://registry.npmjs.org/ts-interface-checker/-/ts-interface-checker-0.1.13.tgz"
@@ -6510,6 +6520,14 @@
   "integrity" "sha512-tGyy4dAjRIEwI7BzsB0lynWgOpfqjUdq91XXAlIWD2OwKBH7oCl/GZG/HT4BOHrTlPMOASlMQ7veyTqpmRcrNA=="
   "resolved" "https://registry.npmjs.org/tslib/-/tslib-2.4.1.tgz"
   "version" "2.4.1"
+
+"twentyfour-to-twelve@^1.0.1":
+  "integrity" "sha512-s2vFibk03vEoMYrHEdXkUmSBUjyhRnN/lXV07pGSV2TP/6K0q8QN9IFIlfmzpvRJ64MLS5SMvxflAuigDRVOeg=="
+  "resolved" "https://registry.npmjs.org/twentyfour-to-twelve/-/twentyfour-to-twelve-1.0.1.tgz"
+  "version" "1.0.1"
+  dependencies:
+    "simple-zeropad" "^1.0.3"
+    "trim" "0.0.1"
 
 "type-fest@^0.12.0":
   "integrity" "sha512-53RyidyjvkGpnWPMF9bQgFtWp+Sl8O2Rp13VavmJgfAP9WWG6q6TkrKU8iyJdnwnfgHI6k2hTlgqH4aSdjoTbg=="

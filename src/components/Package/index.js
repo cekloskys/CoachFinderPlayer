@@ -12,10 +12,7 @@ const Package = ({pack}) => {
     <Pressable style={styles.restaurantContainer} onPress={onPress}>
       <View style={styles.page}>
         <View>
-        <Pressable
-          style={styles.title} onPress={() => navigation.navigate('Book Package')}>
           <Text style={styles.completeContainer}> {pack.name} </Text>
-          </Pressable>
           <Text style={styles.subtitle}>
              ${pack.price}
           </Text>

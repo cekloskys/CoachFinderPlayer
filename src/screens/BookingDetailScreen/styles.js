@@ -40,6 +40,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 30,
     fontWeight: '600',
+    padding:10,
   },
   subtitle: {
     fontSize: 20,

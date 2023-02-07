@@ -28,6 +28,9 @@ const BookPackageScreen = () => {
     setTime(value);
     setTimePicker(false);
   };
+  function twelve() {
+     is24Hour = false;
+  } 
 
   return (
     <View style={styles.page}>
@@ -83,7 +86,7 @@ const BookPackageScreen = () => {
        <TextInput
         style={styles.input}
         placeholder='Time'
-        value={time.toLocaleTimeString('en-US')}
+        value={time.toLocaleTimeString(twelve)}
         editable={false}
       />
       <Pressable

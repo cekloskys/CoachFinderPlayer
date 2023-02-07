@@ -72,7 +72,7 @@ const OrdersStackNavigator = () => {
     return (
         <OrdersStack.Navigator>
             <OrdersStack.Screen name="Bookings" component={BookingsScreen} />
-            <OrdersStack.Screen name={'Booking'} component={BookingDetailScreen} />
+            <OrdersStack.Screen name={'Booking'} component={BookingDetailScreen} options={{headerShown: false}}/>
         </OrdersStack.Navigator>   
     );
 };

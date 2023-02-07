@@ -24,7 +24,7 @@
     "coachId": "2",
     "packageId": "3",
     "User": {
-      "id": "1",
+      "id": "2",
       "name": "Tom Austin",
       "address": "Philadelphia, PA"
     },
@@ -40,7 +40,7 @@
     "coachId": "3",
     "packageId": "2",
     "User": {
-      "id": "1",
+      "id": "3",
       "name": "Bryce Fadako",
       "address": "Philadelphia, PA"
     },
