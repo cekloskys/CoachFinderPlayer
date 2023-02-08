@@ -43,8 +43,8 @@ const HomeTabs = () => {
                 }}
             />
             <Tab.Screen 
-                name="Profile" 
-                component={ProfileScreen} 
+                name="Your Profile" 
+                component={ProfileStackNavigator} 
                 options={{
                     tabBarIcon: ({color}) => <FontAwesome5 name="user-alt" size={24} color={color} />,
                 }}
@@ -76,5 +76,15 @@ const OrdersStackNavigator = () => {
         </OrdersStack.Navigator>   
     );
 };
+const ProfileStack = createStackNavigator();
+
+const ProfileStackNavigator = () => {
+    return (
+        <ProfileStack.Navigator>
+            <ProfileStack.Screen name="Profile" component={ProfileScreen} />
+        </ProfileStack.Navigator>   
+    );
+};
+
 
 export default RootNavigator;

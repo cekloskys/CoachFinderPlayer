@@ -14,14 +14,14 @@ const Package = ({pack}) => {
         source={{ uri: pack.image }}
         style={{width: 85, height: 100, marginRight: 10,}} />
         <View>
-          <Text style={{fontWeight: '600', fontSize: 20,}}>{pack.name} </Text>
-          <Text style={{ color: 'grey',fontSize:16,}}>
+          <Text style={{fontWeight: '600', fontSize: 18,}}>{pack.name} </Text>
+          <Text style={{ color: 'grey',fontSize:14,}}>
              ${pack.price}
           </Text>
-          <Text style={{ color: 'grey',fontSize:14,}}>
+          <Text style={{ color: 'grey',fontSize:12,}}>
             {pack.shortDescription}
           </Text>
-          <Text style={{ color: 'grey',fontSize:14,}}>
+          <Text style={{ color: 'grey',fontSize:12}}>
              {pack.longDescription}
           </Text>
         </View>
