@@ -10,6 +10,32 @@ const ProfileScreen = () => {
   const [sport, setSport] = useState('');
   const [email, setEmail] = useState('');
 
+const Validation =()  => {
+   if (!firstName){
+        alert('Please Enter Your First Name.');
+        return
+    }
+    if (!lastName){
+        alert('Please Enter Your Last Name.');
+        return
+    }
+    if (!address){
+        alert('Please Enter Your Address.');
+        return
+    }
+    if (!sport){
+        alert('Please Enter Your Preferred Sport.');
+        return
+    }
+    if (!email){
+        alert('Please Enter Your Email.');
+        return
+    }
+    else{
+      console.warn('Submitted');
+    }
+    
+  }
     return (
         <View style={styles.page}>
           <TextInput
@@ -61,7 +87,7 @@ const ProfileScreen = () => {
         placeholderTextColor={'lightgrey'}
       />
           <Pressable
-            style={styles.button} onPress={() => console.warn("Submitted")}>
+            style={styles.button} onPress={Validation}>
             <Text style={styles.buttonText}> Submit </Text>
           </Pressable>
       

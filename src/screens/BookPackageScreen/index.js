@@ -29,6 +29,23 @@ const BookPackageScreen = () => {
     setTimePicker(false);
   };
 
+  const Validation =()  => {
+    if (!name){
+         alert('Please Enter Name.');
+         return
+     }
+     if (!date){
+         alert('Please Select a Date.');
+         return
+     }
+     if (!time){
+         alert('Please Select a Time.');
+         return
+     }
+     else{
+      navigation.navigate('Search')
+     }
+    }
   return (
     <View style={styles.page}>
       <TextInput
@@ -87,7 +104,7 @@ const BookPackageScreen = () => {
         editable={false}
       />
       <Pressable
-        style={styles.button} onPress={() => navigation.navigate('Search')}>
+        style={styles.button} onPress={Validation}>
         <Text style={styles.buttonText}> Book Package </Text>
       </Pressable>
 
