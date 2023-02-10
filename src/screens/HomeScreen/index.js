@@ -18,7 +18,6 @@ const HomeScreen = () => {
     'Hockey',
     'Lacrosse',
     'Soccer',
-
   ];
 
     return (
@@ -41,10 +40,6 @@ const HomeScreen = () => {
             rowStyle={styles.dropdownRowStyle}
             rowTextStyle={styles.dropdownRowTxtStyle}
           />
-          <Pressable
-          style={styles.button} onPress={() => console.warn('Find a ' + sport + ' Coach')}>
-          <Text style={styles.buttonText}> Find A Coach </Text>
-          </Pressable>
           <FlatList
             data={coaches}
             renderItem={({item, index}) => <Coach coach={item} />}

@@ -6,8 +6,8 @@ import { useNavigation } from '@react-navigation/native';
 const Coach = ({ coach }) => {
   const navigation = useNavigation();
   const onPress = () => {
-        navigation.navigate('Coach Profile', {id: coach.id})
-      }; 
+    navigation.navigate('Coach Profile', { id: coach.id })
+  };
 
   return (
     <Pressable style={styles.restaurantContainer} onPress={onPress}>
@@ -19,13 +19,13 @@ const Coach = ({ coach }) => {
           <Text style={styles.title}>{coach.name}
           </Text>
           <Text style={styles.subtitle}>
-             {coach.shortDescription}
+            {coach.shortDescription}
           </Text>
           <Text style={styles.subtitle}>
-             Starting at: ${coach.startPrice}
+            Starting at: ${coach.startPrice}
           </Text>
           <Text style={styles.subtitle}>
-             {coach.address}
+            {coach.address}
           </Text>
         </View>
         <View style={styles.rating}>

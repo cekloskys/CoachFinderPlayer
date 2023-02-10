@@ -11,9 +11,7 @@ const PackagesScreen = () => {
             data={packages}
             renderItem={({item, index}) => <Package pack={item} />}
             keyExtractor={(item, index) => index}
-          />
-
-          
+          />    
         </View>
       );
 }
