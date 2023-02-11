@@ -16,7 +16,8 @@ const Coach = ({ coach }) => {
         style={styles.image} />
       <View style={styles.row}>
         <View>
-          <Text style={styles.title}>{coach.name}
+          <Text style={styles.title}>
+            {coach.name}
           </Text>
           <Text style={styles.subtitle}>
             {coach.shortDescription}
@@ -25,12 +26,7 @@ const Coach = ({ coach }) => {
             Starting at: ${coach.startPrice}
           </Text>
           <Text style={styles.subtitle}>
-            {coach.address}
-          </Text>
-        </View>
-        <View style={styles.rating}>
-          <Text>
-            {coach.rating}
+            Location: {coach.address}
           </Text>
         </View>
       </View>

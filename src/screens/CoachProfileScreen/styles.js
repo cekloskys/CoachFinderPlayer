@@ -3,7 +3,6 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
   page: {
     flex: 1,
-
   },
   image: {
     width: '100%',
@@ -22,7 +21,7 @@ const styles = StyleSheet.create({
   },
   sectionContent: {
     width: '100%',
-    height: 36,
+    height: 30,
     paddingTop: 3,
     paddingLeft: 10,
     flexDirection: 'row',
@@ -69,11 +68,11 @@ const styles = StyleSheet.create({
     backgroundColor: 'lightgrey',
     alignItems: 'center',
     borderRadius: 15,
+    marginTop: 20,
   },
   buttonText: {
     color: 'black',
-    fontWeight: '600',
-    fontSize: 18,
+    fontSize: 16,
   },
 });
 

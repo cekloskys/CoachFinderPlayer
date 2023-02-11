@@ -24,19 +24,18 @@ const CoachProfileScreen = () => {
         ListFooterComponent={() =>
           <Pressable
             style={styles.button} onPress={() => navigation.navigate('Packages')}>
-            <Text style={styles.buttonText}> Coach's Packages </Text>
+            <Text style={styles.buttonText}>Packages </Text>
           </Pressable>
         }
         sections={[{ title: 'Accreditations', data: coach.accreditations },
         { title: 'Ages', data: coach.ages },
         { title: 'Positions', data: coach.positions },
         { title: 'Specialities', data: coach.specialties },
-
         ]}
         renderItem={({ item }) => (
           <View style={styles.sectionContent}>
             <View style={{ width: '70%' }}>
-              <Text style={{ fontSize: 18 }}>{item.name}</Text>
+              <Text style={{ color: 'grey', fontSize: 16 }}>{item.name}</Text>
             </View>
           </View>
 

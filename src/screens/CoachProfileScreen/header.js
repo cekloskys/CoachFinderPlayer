@@ -12,11 +12,14 @@ const Header = ({coach}) => {
         <View style={styles.container}>
             <Text style={styles.title}>{coach.name}</Text>
             <Text style={styles.subtitle}>
+               {coach.shortDescription}
+            </Text>
+            <Text style={styles.subtitle}>
                 Starting at: ${coach.startPrice} 
             </Text>
             <Text style={styles.subtitle}>
-               {coach.shortDescription}
-            </Text>
+            Location: {coach.address}
+          </Text>
         </View> 
     </View>
   );

@@ -5,6 +5,7 @@ import bookings from '../../../assets/data/bookings.json';
 import coaches from '../../../assets/data/coaches.json';
 import packages from '../../../assets/data/packages.json';
 import {Ionicons} from '@expo/vector-icons';
+import { ScrollView } from 'react-native-gesture-handler';
 
 const BookingDetailScreen = () => {
   const navigation = useNavigation();
@@ -20,7 +21,7 @@ const BookingDetailScreen = () => {
   const pack = packages[book.packageId-1];
 
   return (
-    <View style={styles.page}>
+    <ScrollView style={styles.page}>
       <Image 
             source={{uri: coach.image}} 
             style={styles.image} />
@@ -56,7 +57,7 @@ const BookingDetailScreen = () => {
         style={styles.iconContainer}
         onPress={onPress}
       />
-    </View>
+    </ScrollView>
   )
 };
 export default BookingDetailScreen;

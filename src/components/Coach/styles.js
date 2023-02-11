@@ -9,9 +9,10 @@ const styles = StyleSheet.create({
     width: '100%',
     aspectRatio: 5 / 3,
     marginBottom: 5,
+    borderRadius: 10,
   },
   title: {
-    fontSize: 15,
+    fontSize: 18,
     fontWeight: '500',
   },
   subtitle: {
@@ -30,7 +31,6 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     alignItems: 'center',
     justifyContent: 'center',
-
   },
 });
 

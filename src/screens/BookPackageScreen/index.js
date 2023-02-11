@@ -29,23 +29,23 @@ const BookPackageScreen = () => {
     setTimePicker(false);
   };
 
-  const Validation =()  => {
-    if (!name){
-         alert('Please Enter Name.');
-         return
-     }
-     if (!date){
-         alert('Please Select a Date.');
-         return
-     }
-     if (!time){
-         alert('Please Select a Time.');
-         return
-     }
-     else{
-      navigation.navigate('Search')
-     }
+  const Validation = () => {
+    if (!name) {
+      alert('Please enter athlete\'s name.');
+      return
     }
+    if (!date) {
+      alert('Please select a start date.');
+      return
+    }
+    if (!time) {
+      alert('Please select a start time.');
+      return
+    }
+
+    navigation.navigate('Search')
+
+  }
   return (
     <View style={styles.page}>
       <TextInput
@@ -63,13 +63,12 @@ const BookPackageScreen = () => {
           display={Platform.OS === 'ios' ? 'spinner' : 'default'}
           is24Hour={true}
           onChange={onDateSelected}
-
         />
       )}
       {!datePicker && (
-        <View style={{ margin: 10 }}>
+        <View>
           <Pressable onPress={showDatePicker} style={styles.button}>
-            <Text style={styles.buttonText}>Select Date</Text>
+            <Text style={styles.buttonText}>Select Start Date</Text>
           </Pressable>
         </View>
       )}
@@ -89,25 +88,23 @@ const BookPackageScreen = () => {
 
         />
       )}
-
       {!timePicker && (
-        <View style={{ margin: 10 }}>
+        <View>
           <Pressable onPress={showTimePicker} style={styles.button}>
-            <Text style={styles.buttonText}>Select Time</Text>
+            <Text style={styles.buttonText}>Select Start Time</Text>
           </Pressable>
         </View>
       )}
-       <TextInput
+      <TextInput
         style={styles.input}
         placeholder='Time'
         value={time.toLocaleTimeString()}
         editable={false}
       />
       <Pressable
-        style={styles.button} onPress={Validation}>
+        style={styles.bookbutton} onPress={Validation}>
         <Text style={styles.buttonText}> Book Package </Text>
       </Pressable>
-
     </View>
   );
 }

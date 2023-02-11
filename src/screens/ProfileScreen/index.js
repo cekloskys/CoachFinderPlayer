@@ -3,6 +3,8 @@ import { useState } from 'react';
 import SelectDropdown from 'react-native-select-dropdown';
 import styles from './styles';
 
+const validator = require('validator');
+
 const ProfileScreen = () => {
   const [fullName, setFullName] = useState('');
   const [age, setAge] = useState('');
@@ -21,23 +23,26 @@ const ProfileScreen = () => {
 
   const Validation = () => {
     if (!fullName) {
-      alert('Please Enter Your Full Name.');
+      alert('Please enter your fullname.');
+      return
+    }
+    if (!age) {
+      alert('Please enter your age.');
       return
     }
     if (!address) {
-      alert('Please Enter Your Address.');
+      alert('Please enter your address.');
+      return
+    }
+    if (!email || !validator.isEmail(email)) {
+      alert('Please enter a valid email.');
       return
     }
     if (!sport) {
-      alert('Please Enter Your Preferred Sport.');
+      alert('Please select your preferred sport.');
       return
     }
-    if (!email) {
-      alert('Please Enter Your Email.');
-      return
-    }
-    
-    alert('Profile Saved.');
+    alert('Profile saved.');
   }
 
   return (
@@ -49,6 +54,7 @@ const ProfileScreen = () => {
         clearButtonMode={'while-editing'}
         placeholder={"Enter Full Name"}
         placeholderTextColor={'lightgrey'}
+        keyboardType='name-phone-pad'
       />
       <TextInput
         value={age}
@@ -78,7 +84,7 @@ const ProfileScreen = () => {
       />
       <SelectDropdown
         data={sports}
-        defaultButtonText={'Select a Sport'}
+        defaultButtonText={'Select Preferred Sport'}
         onSelect={(selectedItem) => {
           setSport(selectedItem);
         }}

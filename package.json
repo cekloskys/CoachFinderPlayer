@@ -23,7 +23,8 @@
     "react-native-screens": "~3.18.0",
     "react-native-select-dropdown": "^3.2.1",
     "react-native-vector-icons": "^9.2.0",
-    "twentyfour-to-twelve": "^1.0.1"
+    "twentyfour-to-twelve": "^1.0.1",
+    "validator": "^13.9.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"
