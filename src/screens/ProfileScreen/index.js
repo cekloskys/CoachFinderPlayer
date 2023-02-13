@@ -7,8 +7,10 @@ const validator = require('validator');
 
 const ProfileScreen = () => {
   const [fullName, setFullName] = useState('');
-  const [age, setAge] = useState('');
-  const [address, setAddress] = useState('');
+  const [street, setStreet] = useState('');
+  const [city, setCity] = useState('');
+  const [state, setState] = useState('');
+  const [zip, setZip] = useState('');
   const [sport, setSport] = useState('');
   const [email, setEmail] = useState('');
 
@@ -26,20 +28,24 @@ const ProfileScreen = () => {
       alert('Please enter your fullname.');
       return
     }
-    if (!age) {
-      alert('Please enter your age.');
+    if (!street) {
+      alert('Please enter your street.');
       return
     }
-    if (!address) {
-      alert('Please enter your address.');
+    if (!city) {
+      alert('Please enter your city.');
+      return
+    }
+    if (!state) {
+      alert('Please enter your state.');
+      return
+    }
+    if (!zip) {
+      alert('Please enter your zip code.');
       return
     }
     if (!email || !validator.isEmail(email)) {
       alert('Please enter a valid email.');
-      return
-    }
-    if (!sport) {
-      alert('Please select your preferred sport.');
       return
     }
     alert('Profile saved.');
@@ -56,22 +62,39 @@ const ProfileScreen = () => {
         placeholderTextColor={'lightgrey'}
         keyboardType='name-phone-pad'
       />
+      
       <TextInput
-        value={age}
-        onChangeText={value => setAge(value)}
+        value={street}
+        onChangeText={value => setStreet(value)}
         style={styles.input}
         clearButtonMode={'while-editing'}
-        placeholder={"Enter Age"}
+        placeholder={"Enter Street"}
         placeholderTextColor={'lightgrey'}
-        keyboardType='numeric'
       />
       <TextInput
-        value={address}
-        onChangeText={value => setAddress(value)}
+        value={city}
+        onChangeText={value => setCity(value)}
         style={styles.input}
         clearButtonMode={'while-editing'}
-        placeholder={"Enter Address"}
+        placeholder={"Enter City"}
         placeholderTextColor={'lightgrey'}
+      />
+      <TextInput
+        value={state}
+        onChangeText={value => setState(value)}
+        style={styles.input}
+        clearButtonMode={'while-editing'}
+        placeholder={"Enter State"}
+        placeholderTextColor={'lightgrey'}
+      />
+      <TextInput
+        value={zip}
+        onChangeText={value => setZip(value)}
+        style={styles.input}
+        clearButtonMode={'while-editing'}
+        placeholder={"Enter Zip Code"}
+        placeholderTextColor={'lightgrey'}
+        keyboardType='number-pad'
       />
       <TextInput
         value={email}
@@ -81,24 +104,6 @@ const ProfileScreen = () => {
         placeholder={"Enter Email"}
         placeholderTextColor={'lightgrey'}
         keyboardType='email-address'
-      />
-      <SelectDropdown
-        data={sports}
-        defaultButtonText={'Select Preferred Sport'}
-        onSelect={(selectedItem) => {
-          setSport(selectedItem);
-        }}
-        buttonTextAfterSelection={(selectedItem) => {
-          return selectedItem;
-        }}
-        rowTextForSelection={(item) => {
-          return item;
-        }}
-        buttonStyle={styles.dropdownBtnStyle}
-        buttonTextStyle={styles.dropdownBtnTxtStyle}
-        dropdownStyle={styles.dropdownDropdownStyle}
-        rowStyle={styles.dropdownRowStyle}
-        rowTextStyle={styles.dropdownRowTxtStyle}
       />
       <Pressable
         style={styles.button} onPress={Validation}>

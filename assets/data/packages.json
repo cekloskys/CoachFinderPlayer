@@ -3,7 +3,6 @@
       "id": "1",
       "name": "Light Package",
       "price": 100.00,
-      "image":"https://phantom-marca.unidadeditorial.es/f2c252bca743d4d45bb61f5918199dec/resize/1320/f/webp/assets/multimedia/imagenes/2022/11/25/16694129388697.jpg",
       "shortDescription": "In person training for a single athlete.",
       "longDescription": "1 session package with coach. 60 minute session.",
       "length": 60
@@ -12,7 +11,6 @@
       "id": "2",
       "name": "Standard Package",
       "price": 285.00,
-      "image":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Carter_vs_Gasol%2C_Lakers_vs_Magic.jpg/550px-Carter_vs_Gasol%2C_Lakers_vs_Magic.jpg",
       "shortDescription": "In person training for a single athlete.",
       "longDescription": "3 session package with coach. 60 minute session.",
       "length": 60
@@ -21,7 +19,6 @@
       "id": "3",
       "name": "Pro Package",
       "price": 475.00,
-      "image":"https://www.inquirer.com/resizer/1Zcf_wT8tEG88b3F4bebjC3kKbg=/800x533/smart/filters:format(webp)/cloudfront-us-east-1.images.arcpublishing.com/pmn/XAT3P47XGNFEVMWQUBZNX3FLZ4.jpg",
       "shortDescription": "In person training for a single athlete.",
       "longDescription": "3 session package with coach. 60 minute session.",
       "length": 60

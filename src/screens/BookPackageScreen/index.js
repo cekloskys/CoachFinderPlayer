@@ -7,6 +7,7 @@ import DateTimePicker from '@react-native-community/datetimepicker';
 
 const BookPackageScreen = () => {
   const [name, setName] = useState('');
+  const [age, setAge] = useState('');
   const navigation = useNavigation();
   const [datePicker, setDatePicker] = useState(false);
   const [date, setDate] = useState(new Date());
@@ -54,6 +55,14 @@ const BookPackageScreen = () => {
         style={styles.input}
         clearButtonMode={'while-editing'}
         placeholder={"Enter Athlete's Name"}
+        placeholderTextColor={'lightgrey'}
+      />
+      <TextInput
+        value={age}
+        onChangeText={value => setAge(value)}
+        style={styles.input}
+        clearButtonMode={'while-editing'}
+        placeholder={"Enter Athlete's Age"}
         placeholderTextColor={'lightgrey'}
       />
       {datePicker && (

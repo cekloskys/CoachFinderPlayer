@@ -7,6 +7,7 @@ import styles from './styles';
 const Header = () => {
 
     const [sport, setSport] = useState('');
+    const [age, setAge] = useState('');
 
   const sports = [
     'Baseball',
@@ -16,6 +17,12 @@ const Header = () => {
     'Lacrosse',
     'Soccer',
   ];
+  const ages = [
+    'Kids',
+    'Teenagers',
+  ]
+
+  
 
   return (
     <View>
@@ -24,6 +31,24 @@ const Header = () => {
         defaultButtonText={'Select a Sport'}
         onSelect={(selectedItem) => {
           setSport(selectedItem);
+        }}
+        buttonTextAfterSelection={(selectedItem) => {
+          return selectedItem;
+        }}
+        rowTextForSelection={(item) => {
+          return item;
+        }}
+        buttonStyle={styles.dropdownBtnStyle}
+        buttonTextStyle={styles.dropdownBtnTxtStyle}
+        dropdownStyle={styles.dropdownDropdownStyle}
+        rowStyle={styles.dropdownRowStyle}
+        rowTextStyle={styles.dropdownRowTxtStyle}
+      />
+       <SelectDropdown
+        data={ages}
+        defaultButtonText={'Select an Age Group'}
+        onSelect={(selectedItem) => {
+          setAge(selectedItem);
         }}
         buttonTextAfterSelection={(selectedItem) => {
           return selectedItem;
