@@ -7,12 +7,13 @@ import { Coach, Sport } from '../../models';
 import styles from './styles';
 
 let selectedSport = '';
+let selectedSportId = '';
 
-const Header = () => {
-
-  const [sport, setSport] = useState('');
+const HomeScreen = () => {
+  
   const [sports, setSports] = useState([]);
   const [displaySports, setDisplaySports] = useState([]);
+  const [coaches, setCoaches] = useState([]);
 
   useEffect(() => {
     DataStore.query(Sport).then(setSports);
@@ -29,22 +30,24 @@ const Header = () => {
     setDisplaySports(display);
   }, [sports]);
 
-
-
+  const fetchCoaches = async () => {
+    const results = await DataStore.query(Coach, (c) => c.sportID.eq(selectedSportId));
+    setCoaches(results);
+  };
 
   return (
-    <View>
+    <View style={styles.page}>
       <SelectDropdown
         data={displaySports}
         defaultButtonText={'Select a Sport'}
-        onSelect={(selectedItem) => {
-          //setSport(selectedItem);
+        onSelect={(selectedItem) => {   
           selectedSport = selectedItem;
           for (let i = 0; i < sports.length; i++) {
             if(sports[i].nam === selectedSport){
-              selectedSport = sports[i].id
+              selectedSportId = sports[i].id
             }
           }
+          fetchCoaches();
         }}
         buttonTextAfterSelection={(selectedItem) => {
           return selectedItem;
@@ -58,32 +61,7 @@ const Header = () => {
         rowStyle={styles.dropdownRowStyle}
         rowTextStyle={styles.dropdownRowTxtStyle}
       />
-
-    </View>
-  );
-};
-
-const HomeScreen = () => {
-
-  const [coaches, setCoaches] = useState([]);
-
-  const fetchCoaches = async () => {
-    const results = await DataStore.query(Coach, (c) => c.sportID.eq(selectedSport));
-    setCoaches(results);
-  };
-
-  useEffect(() => {
-    if(!selectedSport){
-      return;
-    }
-    fetchCoaches();
-  }, [selectedSport]);
-
-
-  return (
-    <View style={styles.page}>
       <FlatList
-        ListHeaderComponent={() => <Header />}
         data={coaches}
         renderItem={({ item, index }) => <CoachComponent coach={item} />}
         keyExtractor={(item, index) => index}

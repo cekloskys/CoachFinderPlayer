@@ -8,7 +8,7 @@ const Coach = ({ coach }) => {
   const onPress = () => {
     navigation.navigate('Coach Profile', { id: coach.id })
   };
-
+  
   return (
     <Pressable style={styles.restaurantContainer} onPress={onPress}>
       <Image
