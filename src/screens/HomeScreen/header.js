@@ -1,33 +1,39 @@
 import React from 'react';
+import { DataStore } from '@aws-amplify/datastore';
 import { View} from 'react-native';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import SelectDropdown from 'react-native-select-dropdown';
 import styles from './styles';
+import { Sport } from '../../models';
 
 const Header = () => {
 
     const [sport, setSport] = useState('');
-    const [age, setAge] = useState('');
+    const [sports, setSports] = useState([]);
+    const [displaySports, setDisplaySports] = useState([]);
 
-  const sports = [
-    'Baseball',
-    'Basketball',
-    'Football',
-    'Hockey',
-    'Lacrosse',
-    'Soccer',
-  ];
-  const ages = [
-    'Kids',
-    'Teenagers',
-  ]
+    useEffect(() => {
+      DataStore.query(Sport).then(setSports);
+  }, []);
+
+  useEffect(() => {
+      if (!sports) {
+          return;
+      }
+      const display = [];
+      for (let i = 0; i < sports.length; i++) {
+          display.push(sports[i].nam);
+      }
+      setDisplaySports(display);
+  }, [sports]);
+    
 
   
 
   return (
     <View>
         <SelectDropdown
-        data={sports}
+        data={displaySports}
         defaultButtonText={'Select a Sport'}
         onSelect={(selectedItem) => {
           setSport(selectedItem);
@@ -44,24 +50,7 @@ const Header = () => {
         rowStyle={styles.dropdownRowStyle}
         rowTextStyle={styles.dropdownRowTxtStyle}
       />
-       <SelectDropdown
-        data={ages}
-        defaultButtonText={'Select an Age Group'}
-        onSelect={(selectedItem) => {
-          setAge(selectedItem);
-        }}
-        buttonTextAfterSelection={(selectedItem) => {
-          return selectedItem;
-        }}
-        rowTextForSelection={(item) => {
-          return item;
-        }}
-        buttonStyle={styles.dropdownBtnStyle}
-        buttonTextStyle={styles.dropdownBtnTxtStyle}
-        dropdownStyle={styles.dropdownDropdownStyle}
-        rowStyle={styles.dropdownRowStyle}
-        rowTextStyle={styles.dropdownRowTxtStyle}
-      />
+       
     </View>
   );
 };
