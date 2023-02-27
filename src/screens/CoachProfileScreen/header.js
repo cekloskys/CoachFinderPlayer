@@ -10,15 +10,15 @@ const Header = ({coach}) => {
             source={{uri: coach.image}} 
             style={styles.image} />
         <View style={styles.container}>
-            <Text style={styles.title}>{coach.name}</Text>
+            <Text style={styles.title}>{coach.fullName}</Text>
             <Text style={styles.subtitle}>
-               {coach.shortDescription}
+               {coach.shortDesc}
             </Text>
             <Text style={styles.subtitle}>
                 Starting at: ${coach.startPrice} 
             </Text>
             <Text style={styles.subtitle}>
-            Location: {coach.address}
+            Location: {coach.city}, {coach.state}
           </Text>
         </View> 
     </View>

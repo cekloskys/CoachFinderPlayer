@@ -25,15 +25,17 @@ const HomeScreen = () => {
     }
     const display = [];
     for (let i = 0; i < sports.length; i++) {
-      display.push(sports[i].nam);
+      display.push(sports[i].name);
     }
     setDisplaySports(display);
   }, [sports]);
+  console.log(displaySports);
 
   const fetchCoaches = async () => {
     const results = await DataStore.query(Coach, (c) => c.sportID.eq(selectedSportId));
     setCoaches(results);
-  };
+  }; 
+  
 
   return (
     <View style={styles.page}>
@@ -43,7 +45,7 @@ const HomeScreen = () => {
         onSelect={(selectedItem) => {   
           selectedSport = selectedItem;
           for (let i = 0; i < sports.length; i++) {
-            if(sports[i].nam === selectedSport){
+            if(sports[i].name === selectedSport){
               selectedSportId = sports[i].id
             }
           }

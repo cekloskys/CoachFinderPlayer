@@ -22,7 +22,7 @@ const Header = () => {
       }
       const display = [];
       for (let i = 0; i < sports.length; i++) {
-          display.push(sports[i].nam);
+          display.push(sports[i].name);
       }
       setDisplaySports(display);
   }, [sports]);
