@@ -19,11 +19,11 @@ const Package = ({ pack }) => {
           ${pack.price}
         </Text>
         <Text style={{ color: 'grey', fontSize: 14 }}>
-          {pack.shortDescription}
+          {pack.shortDesc}
         </Text>
         <View style={{ flexDirection: 'row' }}>
           <Text style={{ color: 'grey', fontSize: 14, flex: 1, flexWrap: 'wrap' }}>
-            {pack.longDescription}
+            {pack.longDesc}
           </Text>
         </View>
       </View>
