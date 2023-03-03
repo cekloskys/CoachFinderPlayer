@@ -22,7 +22,7 @@ const CoachProfileScreen = () => {
 
   const id = route.params?.id;
 
-  const oldCoach = coaches[3];
+  
   const getAccreditations = async () => {
     let accreditationCoaches = await DataStore.query(AccreditationCoach, (ac) => ac.coachID.eq(id));
     let accreds = await DataStore.query(Accreditation); 
@@ -63,8 +63,8 @@ const CoachProfileScreen = () => {
     let specialityCoaches = await DataStore.query(SpecialityCoach, (sc) => sc.coachID.eq(id));
     let specialities = await DataStore.query(Speciality); 
     const display = [];
-    specialityCoaches.map(specialtyCoach => {
-      let speciality = specialities.find(s => s.id == specialtyCoach.specialityCoachSpecialityId)
+    specialityCoaches.map(specialityCoach => {
+      let speciality = specialities.find(s => s.id == specialityCoach.specialityCoachSpecialityId)
       if (speciality.name) {
         display.push(speciality);
       }

@@ -1,54 +1,67 @@
 import { View, Text, Image } from 'react-native';
 import { useRoute, useNavigation } from '@react-navigation/native';
 import styles from './styles';
-import bookings from '../../../assets/data/bookings.json';
-import coaches from '../../../assets/data/coaches.json';
-import packages from '../../../assets/data/packages.json';
+import { useState, useEffect } from 'react';
+import { DataStore } from 'aws-amplify';
+import { Coach, Package } from '../../models';
 import {Ionicons} from '@expo/vector-icons';
 import { ScrollView } from 'react-native-gesture-handler';
 
 const BookingDetailScreen = () => {
   const navigation = useNavigation();
   const route = useRoute();
+  const book = route.params?.book;
   const onPress = () => {
     navigation.navigate('Bookings');
   };
-  const book = route.params?.book;
+  const [packages, setPackages] = useState({});
   
 
-  const booking = bookings[book.id-1];
-  const coach = coaches[book.coachId-1];
-  const pack = packages[book.packageId-1];
+  useEffect(() => {
+    DataStore.query(Package, p => p.id.eq(book.packageID)).then(setPackages);
+  }, []);
+  console.log(packages.name);
+  console.log(packages);
+
+  
+
+  
+
+  
+  
+
+
 
   return (
     <ScrollView style={styles.page}>
       <Image 
-            source={{uri: coach.image}} 
+            source={{uri:book.Coach.image
+          }} 
             style={styles.image} />
-             <Text style={styles.title}>{coach.name}</Text>
+             <Text style={styles.title}>{book.Coach.fullName}</Text>
              <View style={{flexDirection:'row',marginVertical: 4, padding:10}}>
             <Text style={styles.subtitle}>Athlete</Text>
-            <Text style={styles.subtitledetail}>{booking.User.name}</Text>
+            <Text style={styles.subtitledetail}>{book.athleteName}</Text>
             </View>
             <View style={{flexDirection:'row', marginVertical: 4,padding:10}}>
             <Text style={styles.subtitle}>Package Name</Text>
-            <Text style={styles.subtitledetail}>{pack.name}</Text>
+            <Text style={styles.subtitledetail}>{packages?.name}</Text>
             </View>
             <View style={{flexDirection:'row', marginVertical: 4,padding:10}}>
             <Text style={styles.subtitle}>Price</Text>
-            <Text style={styles.subtitledetail}>${pack.price}</Text>
+            <Text style={styles.subtitledetail}>${packages.price}</Text>
             </View>
             <View style={{flexDirection:'column', marginVertical: 4, padding: 10}}>
             <Text style={styles.subtitle}>Details</Text>
-            <Text style={styles.details}>{pack.longDescription}</Text>
+            <Text style={styles.details}>{packages.longDesc}</Text>
             </View>
             <View style={{flexDirection:'row', marginVertical: 4,padding:10,}}>
             <Text style={styles.subtitle}>Start Date</Text>
-            <Text style={styles.subtitledetail}>{booking.startDate}</Text>
+            <Text style={styles.subtitledetail}>{book.startDate}</Text>
             </View>
             <View style={{flexDirection:'row', marginVertical: 4,padding:10}}>
             <Text style={styles.subtitle}>Start Time</Text>
-            <Text style={styles.subtitledetail}>{booking.startTime}</Text>
+            <Text style={styles.subtitledetail}>{book.startTime}</Text>
             </View>
       <Ionicons
         name='arrow-back-circle'
