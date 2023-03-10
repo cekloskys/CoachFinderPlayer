@@ -5,10 +5,11 @@ import { useNavigation } from '@react-navigation/native';
 
 const Coach = ({ coach }) => {
   const navigation = useNavigation();
+
   const onPress = () => {
     navigation.navigate('Coach Profile', { id: coach.id })
   };
-  
+
   return (
     <Pressable style={styles.restaurantContainer} onPress={onPress}>
       <Image
@@ -22,12 +23,14 @@ const Coach = ({ coach }) => {
           <Text style={styles.subtitle}>
             {coach.shortDesc}
           </Text>
-          <Text style={styles.subtitle}>
-            Starting at: ${coach.startPrice}
-          </Text>
-          <Text style={styles.subtitle}>
-            Location: {coach.city}, {coach.state}
-          </Text>
+          <View style={{ flexDirection: 'row' }}>
+            <Text style={styles.subtitle}>Starting Price &#8226; </Text>
+            <Text style={styles.subtitle}>$ {coach.startPrice}</Text>
+          </View>
+          <View style={{ flexDirection: 'row' }}>
+            <Text style={styles.subtitle}>Location &#8226; </Text>
+            <Text style={styles.subtitle}>{coach.city}, {coach.state}</Text>
+          </View>
         </View>
       </View>
     </Pressable>

@@ -18,7 +18,7 @@ const HomeScreen = () => {
   useEffect(() => {
     DataStore.query(Sport).then(setSports);
   }, []);
-
+  
   useEffect(() => {
     if (!sports) {
       return;
@@ -27,16 +27,15 @@ const HomeScreen = () => {
     for (let i = 0; i < sports.length; i++) {
       display.push(sports[i].name);
     }
+    display.sort();
     setDisplaySports(display);
   }, [sports]);
-  console.log(displaySports);
 
   const fetchCoaches = async () => {
     const results = await DataStore.query(Coach, (c) => c.sportID.eq(selectedSportId));
     setCoaches(results);
   }; 
   
-
   return (
     <View style={styles.page}>
       <SelectDropdown

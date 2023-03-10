@@ -4,16 +4,17 @@ import { useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import DateTimePicker from '@react-native-community/datetimepicker';
 
-
 const BookPackageScreen = () => {
+
   const [name, setName] = useState('');
   const [age, setAge] = useState('');
   const navigation = useNavigation();
   const [datePicker, setDatePicker] = useState(false);
   const [date, setDate] = useState(new Date());
   const [timePicker, setTimePicker] = useState(false);
-  const [time, setTime] = useState(new Date(Date.now()));
-
+  const [time, setTime] = useState(new Date());
+  const [selectedTime, setSelectedTime] = useState('');
+  
   function showDatePicker() {
     setDatePicker(true);
   };
@@ -25,14 +26,26 @@ const BookPackageScreen = () => {
     setDate(value);
     setDatePicker(false);
   };
+
   function onTimeSelected(event, value) {
-    setTime(value);
+    const currentTime = value || time;
+    let tempTime = new Date(currentTime);
+    let hours = tempTime.getHours();
+    let minutes = tempTime.getMinutes();
+    let timeValue = "" + ((hours > 12) ? hours - 12 : hours);
+    timeValue += (minutes < 10) ? ":0" + minutes : ":" + minutes;
+    timeValue += (hours >= 12) ? " PM" : " AM";
+    setSelectedTime(timeValue);
     setTimePicker(false);
   };
 
-  const Validation = () => {
+  const validation = () => {
     if (!name) {
       alert('Please enter athlete\'s name.');
+      return
+    }
+    if (!age) {
+      alert('Please enter athlete\'s age.');
       return
     }
     if (!date) {
@@ -45,8 +58,8 @@ const BookPackageScreen = () => {
     }
 
     navigation.navigate('Search')
-
   }
+
   return (
     <View style={styles.page}>
       <TextInput
@@ -64,6 +77,7 @@ const BookPackageScreen = () => {
         clearButtonMode={'while-editing'}
         placeholder={"Enter Athlete's Age"}
         placeholderTextColor={'lightgrey'}
+        keyboardType={'number-pad'}
       />
       {datePicker && (
         <DateTimePicker
@@ -107,12 +121,12 @@ const BookPackageScreen = () => {
       <TextInput
         style={styles.input}
         placeholder='Time'
-        value={time.toLocaleTimeString()}
+        value={selectedTime ? selectedTime : time.toLocaleTimeString()}
         editable={false}
       />
       <Pressable
-        style={styles.bookbutton} onPress={Validation}>
-        <Text style={styles.buttonText}> Book Package </Text>
+        style={styles.bookbutton} onPress={validation}>
+        <Text style={styles.buttonText}>Book Package</Text>
       </Pressable>
     </View>
   );

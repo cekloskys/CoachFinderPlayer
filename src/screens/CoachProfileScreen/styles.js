@@ -3,6 +3,7 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
   page: {
     flex: 1,
+    backgroundColor: '#f5f4f2',
   },
   image: {
     width: '100%',
@@ -11,9 +12,9 @@ const styles = StyleSheet.create({
   },
   completeContainer: {
     width: '100%',
-    height: 36,
-    backgroundColor: 'lightgrey',
-    paddingTop: 3,
+    //height: 36,
+    //backgroundColor: 'lightgrey',
+    paddingTop: 5,
     paddingLeft: 10,
     flexDirection: 'row',
     zIndex: 100,
@@ -21,10 +22,10 @@ const styles = StyleSheet.create({
   },
   sectionContent: {
     width: '100%',
-    height: 30,
-    paddingTop: 3,
+    //height: 30,
+    //paddingTop: 3,
     paddingLeft: 10,
-    flexDirection: 'row',
+    //flexDirection: 'row',
     zIndex: 100,
     flex: 1,
   },
@@ -37,10 +38,24 @@ const styles = StyleSheet.create({
   },
   subtitle: {
     color: 'grey',
-    fontSize: 15,
+    fontSize: 20,
+    marginBottom: 10,
+  },
+  subtitle2: {
+    fontSize: 16,
+    fontWeight: '500',
+  },
+  subtitledetail: {
+    color: 'grey',
+    fontSize: 16,
+    marginLeft: 'auto',
+  },
+  subtitledetail2: {
+    color: 'grey',
+    fontSize: 16,
   },
   container: {
-    margin: 10,
+    marginHorizontal: 10,
   },
   iconContainer: {
     position: 'absolute',
@@ -58,17 +73,17 @@ const styles = StyleSheet.create({
   },
   menu: {
     marginVertical: 10,
-    fontSize: 18,
+    fontSize: 16,
     color: 'grey',
   },
   button: {
     borderColor: 'black',
-    marginTop: 'auto',
+    marginVertical: 10,
     padding: 15,
     backgroundColor: 'lightgrey',
     alignItems: 'center',
-    borderRadius: 15,
-    marginTop: 20,
+    borderRadius: 5,
+    marginHorizontal: 5,
   },
   buttonText: {
     color: 'black',

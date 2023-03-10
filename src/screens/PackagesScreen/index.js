@@ -1,6 +1,6 @@
 import { View, FlatList} from 'react-native';
 import { useState, useEffect } from 'react';
-import { DataStore } from 'aws-amplify';
+import { DataStore, Predicates, SortDirection } from 'aws-amplify';
 import { Package } from '../../models';
 import styles from './styles';
 import PackageComponent from '../../components/Package';
@@ -10,7 +10,9 @@ const PackagesScreen = () => {
   
 
   useEffect(() => {
-    DataStore.query(Package).then(setPackages);
+    DataStore.query(Package, Predicates.ALL, {
+      sort: s => s.price(SortDirection.ASCENDING)
+    }).then(setPackages);
   }, []);
 
     return (

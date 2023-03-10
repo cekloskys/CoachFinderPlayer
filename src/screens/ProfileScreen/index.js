@@ -1,6 +1,5 @@
 import { View, TextInput, Pressable, Text } from 'react-native';
 import { useState } from 'react';
-import SelectDropdown from 'react-native-select-dropdown';
 import styles from './styles';
 
 const validator = require('validator');
@@ -11,17 +10,7 @@ const ProfileScreen = () => {
   const [city, setCity] = useState('');
   const [state, setState] = useState('');
   const [zip, setZip] = useState('');
-  const [sport, setSport] = useState('');
   const [email, setEmail] = useState('');
-
-  const sports = [
-    'Baseball',
-    'Basketball',
-    'Football',
-    'Hockey',
-    'Lacrosse',
-    'Soccer',
-  ];
 
   const Validation = () => {
     if (!fullName) {
@@ -62,7 +51,6 @@ const ProfileScreen = () => {
         placeholderTextColor={'lightgrey'}
         keyboardType='name-phone-pad'
       />
-      
       <TextInput
         value={street}
         onChangeText={value => setStreet(value)}

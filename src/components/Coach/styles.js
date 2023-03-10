@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     width: '100%',
     aspectRatio: 5 / 3,
     marginBottom: 5,
-    borderRadius: 10,
+    borderRadius: 5,
   },
   title: {
     fontSize: 18,
@@ -18,19 +18,13 @@ const styles = StyleSheet.create({
   subtitle: {
     color: 'grey',
   },
+  subtitledetail: {
+    //marginLeft: 'auto',
+    fontWeight: '500',
+  },
   row: {
     flexDirection: 'row',
     alignItems: 'center',
-  },
-  rating: {
-    marginLeft: 'auto',
-    marginTop: 35,
-    backgroundColor: 'lightgrey',
-    width: 30,
-    height: 30,
-    borderRadius: 20,
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });
 

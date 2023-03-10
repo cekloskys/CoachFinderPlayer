@@ -1,10 +1,8 @@
 import { StyleSheet } from 'react-native';
 
-
 const styles = StyleSheet.create({
   page: {
     flex: 1,
-
   },
   iconContainer: {
     position: 'absolute',
@@ -13,8 +11,11 @@ const styles = StyleSheet.create({
   },
   image: {
     width: '100%',
-    aspectRatio: 5 / 3,
-    marginBottom: 5,
+    aspectRatio: 5/3,
+  },
+  title: {
+    fontSize: 30,
+    fontWeight: '600',
   },
   completeContainer: {
     width: '100%',
@@ -38,29 +39,24 @@ const styles = StyleSheet.create({
   outer: {
     height: '100%',
   },
-  title: {
-    fontSize: 30,
-    fontWeight: '600',
-    padding:10,
-  },
   subtitle: {
-    fontSize: 20,
+    fontSize: 16,
+    fontWeight: '600',
   },
   details: {
     color:'grey',
-    fontSize:18,
-    marginTop: 20,
-    
+    fontSize: 16,
+    marginTop: 2,
   },
- 
   subtitledetail: {
     color: 'grey',
-    fontSize: 18,
+    fontSize: 16,
     marginLeft: 'auto',
   },
-  container: {
-    margin: 10,
-  }
+  subtitledetail2: {
+    color: 'grey',
+    fontSize: 16,
+  },
 });
 
 export default styles;

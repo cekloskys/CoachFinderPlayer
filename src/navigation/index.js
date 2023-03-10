@@ -29,21 +29,21 @@ const HomeTabs = () => {
     return (
         <Tab.Navigator barStyle={{backgroundColor: 'white'}}>
             <Tab.Screen 
-                name="Home" 
+                name="Search" 
                 component={HomeStackNavigator} 
                 options={{
-                    tabBarIcon: ({color}) => <Foundation name="home" size={24} color={color} />,
+                    tabBarIcon: ({color}) => <FontAwesome5 name="search" size={24} color={color} />,
                 }}
             />
             <Tab.Screen 
-                name="Your Bookings" 
+                name="Bookings" 
                 component={OrdersStackNavigator} 
                 options={{
                     tabBarIcon: ({color}) => <MaterialIcons name="list-alt" size={24} color={color} />,
                 }}
             />
             <Tab.Screen 
-                name="Your Profile" 
+                name="Profile" 
                 component={ProfileStackNavigator} 
                 options={{
                     tabBarIcon: ({color}) => <FontAwesome5 name="user-alt" size={24} color={color} />,
@@ -58,7 +58,7 @@ const HomeStack = createStackNavigator();
 const HomeStackNavigator = () => {
     return (
         <HomeStack.Navigator>
-            <HomeStack.Screen name="Search" component={HomeScreen} />
+            <HomeStack.Screen name="Search Coaches" component={HomeScreen} />
             <HomeStack.Screen name={'Coach Profile'} component={CoachProfileScreen} options={{headerShown: false}}/>
             <HomeStack.Screen name="Packages" component={PackagesScreen} />
             <HomeStack.Screen name="Book Package" component={BookPackageScreen} />
@@ -71,7 +71,7 @@ const OrdersStack = createStackNavigator();
 const OrdersStackNavigator = () => {
     return (
         <OrdersStack.Navigator>
-            <OrdersStack.Screen name="Bookings" component={BookingsScreen} />
+            <OrdersStack.Screen name="Your Bookings" component={BookingsScreen} />
             <OrdersStack.Screen name={'Booking'} component={BookingDetailScreen} options={{headerShown: false}}/>
         </OrdersStack.Navigator>   
     );
@@ -81,7 +81,7 @@ const ProfileStack = createStackNavigator();
 const ProfileStackNavigator = () => {
     return (
         <ProfileStack.Navigator>
-            <ProfileStack.Screen name="Profile" component={ProfileScreen} />
+            <ProfileStack.Screen name="Your Profile" component={ProfileScreen} />
         </ProfileStack.Navigator>   
     );
 };

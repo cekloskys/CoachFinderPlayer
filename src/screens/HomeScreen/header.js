@@ -27,9 +27,6 @@ const Header = () => {
       setDisplaySports(display);
   }, [sports]);
     
-
-  
-
   return (
     <View>
         <SelectDropdown
